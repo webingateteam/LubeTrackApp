@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lubetrackapp">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/petrolabslogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/petrolabslogo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LubeTrackApp"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".loadingpage"
+            android:clearTaskOnLaunch="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:stateNotNeeded="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".ClientLocations" />
+        <activity android:name=".Dashboard" />
+        <activity android:name=".EquipmentTypes" />
+        <activity android:name=".OilEquipmentList" />
+        <activity android:name=".ForgotPwdActivity" />
+        <activity android:name=".EquipmentDetails" />
+        <activity android:name=".ReportsActivity" />
+        <activity android:name=".ProfileDetails" />
+        <activity android:name=".GreasingEquipmentList" />
+        <activity android:name=".FiltrationEquipmentList" />
+    </application>
+
+</manifest>

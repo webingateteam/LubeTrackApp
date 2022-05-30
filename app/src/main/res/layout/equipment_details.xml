@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingConstraints">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headingCL"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/topLL"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:background="@color/white"
+            android:gravity="center|start"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="1dp"
+            >
+
+            <ImageView
+                android:id="@+id/addAddr_back_Img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_arrow_back"
+                android:visibility="visible"
+                app:tint="@color/defaultTextColor" />
+
+            <TextView
+                android:id="@+id/headingTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:fontFamily="@font/robotoslab_bold"
+                android:text="Equipment Details"
+                android:textAllCaps="true"
+                android:textColor="@color/defaultTextColor"
+                android:textSize="14dp"/>
+
+        </LinearLayout>
+
+        <View
+            app:layout_constraintTop_toBottomOf="@+id/topLL"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_300"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/parentScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/space_52"
+        android:layout_marginBottom="@dimen/space_52"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headingCL">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parentView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/space_100"
+                android:layout_height="@dimen/space_100"
+                android:src="@drawable/baseline_image_black_24"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginStart="@dimen/space_16"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/ClientText"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_20"
+                android:layout_marginRight="@dimen/space_16"
+                android:layout_weight="1"
+                android:background="@drawable/layout_border"
+                android:fontFamily="@font/robotoslab_regular"
+                android:padding="10dp"
+                android:text="Client"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image"/>
+
+            <TextView
+                android:id="@+id/ClientTextErrorMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_4"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Please Select One Client"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/ClientText"
+                app:layout_constraintStart_toEndOf="@id/image"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/LocationText"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginRight="@dimen/space_16"
+                android:layout_weight="1"
+                android:background="@drawable/layout_border"
+                android:fontFamily="@font/robotoslab_regular"
+                android:padding="10dp"
+                android:text="Location"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintTop_toBottomOf="@+id/ClientTextErrorMsg"
+                app:layout_constraintStart_toEndOf="@id/image"
+                />
+
+            <TextView
+                android:id="@+id/LocationTextErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_4"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Please Select Location"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/LocationText"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/SpinnerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_20"
+                android:layout_marginRight="@dimen/space_16"
+                android:layout_weight="1"
+                android:background="@drawable/layout_border"
+                android:fontFamily="@font/robotoslab_regular"
+                android:padding="10dp"
+                android:text="Type of Infestation"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintTop_toTopOf="@+id/LocationTextErrorMsg"
+                />
+
+            <TextView
+                android:id="@+id/SpinnerTextErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_4"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Please select Type of Infestation"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/SpinnerText"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/InspectedText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="Inspected Area"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robotoslab_regular"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:layout_constraintTop_toBottomOf="@id/SpinnerTextErrorMsg" />
+
+            <EditText
+                android:id="@+id/InspectedEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/InspectedText"/>
+
+            <TextView
+                android:id="@+id/InspectErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Inspected Area can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/InspectedEditText"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/IssueText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="Issue"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robotoslab_regular"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:layout_constraintTop_toBottomOf="@+id/InspectErrorMsg" />
+
+            <EditText
+                android:id="@+id/IssueEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/IssueText"/>
+
+            <TextView
+                android:id="@+id/IssueErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Issue can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/IssueEditText"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/ActionPlanText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="Action Plan"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robotoslab_regular"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:layout_constraintTop_toBottomOf="@+id/IssueErrorMsg" />
+
+            <EditText
+                android:id="@+id/ActionPlanEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/ActionPlanText"/>
+
+            <TextView
+                android:id="@+id/ActionPlanErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Action Plan can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/ActionPlanEditText"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/ClientActionPlanText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="Client Action Plan"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robotoslab_regular"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:layout_constraintTop_toBottomOf="@+id/ActionPlanErrorMsg" />
+
+            <EditText
+                android:id="@+id/ClientActionPlanEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/ClientActionPlanText"/>
+
+            <TextView
+                android:id="@+id/ClientActionPlanErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Client Action Plan can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/ClientActionPlanEditText"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/ActionTakenText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="Action Taken"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robotoslab_regular"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:layout_constraintTop_toBottomOf="@+id/ClientActionPlanErrorMsg" />
+
+            <EditText
+                android:id="@+id/ActionTakenEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/ActionTakenText"/>
+
+            <TextView
+                android:id="@+id/ActionTakenErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Action Taken can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/ActionTakenEditText"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/ClientActionTakenText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="Client Action Taken"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robotoslab_regular"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:layout_constraintTop_toBottomOf="@+id/ActionTakenErrorMsg"
+                />
+
+            <EditText
+                android:id="@+id/ClientActionTakenEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/ClientActionTakenText"/>
+
+            <TextView
+                android:id="@+id/ClientActionTakenErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Client Action Taken can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/ClientActionTakenEditText"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginStart="@dimen/space_16"
+                app:layout_constraintTop_toBottomOf="@+id/ClientActionTakenErrorMsg"
+                />
+
+            <EditText
+                android:id="@+id/DescriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/layout_border"
+                android:fontFamily="@font/robotoslab_regular"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:textColor="@color/grey_600"
+                android:lines="3"
+                android:minLines="3"
+                android:gravity="top|start"
+                android:maxLines="3"
+                android:scrollbars="vertical"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/description"/>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

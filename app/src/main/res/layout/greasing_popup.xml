@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_100"
+    tools:ignore="MissingConstraints">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:id="@+id/headerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:fontFamily="@font/sansation_bold"
+                    android:gravity="center_vertical"
+                    android:text="Greasing"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:id="@+id/PointsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Greasing Points"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/PointsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/PointsText" />
+
+            <TextView
+                android:id="@+id/PointsErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Greasing points can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/PointsEditText"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/DEStrokesText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sansation_regular"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="Strokes DE"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/DEStrokesEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/DEStrokesText" />
+
+            <TextView
+                android:id="@+id/DEStrokesErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Strokes DE can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/DEStrokesEditText"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/NDEStrokesText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Strokes NDE"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/NDEStrokesEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/NDEStrokesText"/>
+
+            <TextView
+                android:id="@+id/NDEStrokesErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Strokes NDE can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/NDEStrokesEdit"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/totalstrokes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Total Strokes"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/totalstrokesEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/totalstrokes"/>
+
+
+            <TextView
+                android:id="@+id/perstrokeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Kg Per Stroke"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/PerstrokeEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/perstrokeText"/>
+
+            <TextView
+                android:id="@+id/PerstrokeErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Kg per stroke can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/PerstrokeEdit"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/totalgreaseText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Total Grease Used(in kg)"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/totalgreaseEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/totalgreaseText"/>
+
+
+            <TextView
+                android:id="@+id/lubegradeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Grease Grade"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/lubegradeEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:text="Greasegrade"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/lubegradeText"/>
+
+            <TextView
+                android:id="@+id/lubegradeErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Lube grade can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/lubegradeEdit"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/Comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Comments"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+
+            <EditText
+                android:id="@+id/CommentsEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:fontFamily="@font/robotoslab_regular"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:textColor="@color/grey_600"
+                android:lines="3"
+                android:minLines="3"
+                android:gravity="top|start"
+                android:maxLines="3"
+                android:scrollbars="vertical"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/Comments"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="16dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/yes_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:background="@drawable/button_round_corner_border_theme_pd"
+                android:fontFamily="@font/sansation_bold"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/no_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/button_round_corner"
+                android:fontFamily="@font/sansation_bold"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

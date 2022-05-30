@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_100">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:id="@+id/headerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:fontFamily="@font/sansation_bold"
+                    android:gravity="center_vertical"
+                    android:text="Oiling "
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:id="@+id/sumpText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Sump in Ltrs"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/SumpEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/sumpText" />
+
+            <TextView
+                android:id="@+id/SumpErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Sump in litres can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/QtyTextView"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/Qantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sansation_regular"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="Quantity"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/QtyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/Qantity" />
+
+            <TextView
+                android:id="@+id/QtyErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Quantity can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/QtyEditText"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/Filteroil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Filter Oil Topup"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/oiltopEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/Filteroil"/>
+
+            <TextView
+                android:id="@+id/OiltoppErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Filter oil topup can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/oiltopEdit"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/freshoil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Fresh Oil Topup"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/freshoilEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/freshoil"/>
+
+            <TextView
+                android:id="@+id/freshoilErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Fresh oil topup can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/freshoilEdit"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Total Consumption"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/totalEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/total"/>
+
+
+            <TextView
+                android:id="@+id/lubegradeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Lube Grade"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/lubegradeEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:padding="10dp"
+                android:text="Lubegrade"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/lubegradeText"/>
+
+            <TextView
+                android:id="@+id/lubegradeErrorMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="\* Lube grade can't be blank"
+                android:textColor="@color/red_600"
+                app:layout_constraintTop_toBottomOf="@+id/lubegradeEdit"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/Comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:fontFamily="@font/sansation_regular"
+                android:text="Comments"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+
+            <EditText
+                android:id="@+id/CommentsEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/layout_border"
+                android:fontFamily="@font/robotoslab_regular"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:textColor="@color/grey_600"
+                android:lines="3"
+                android:minLines="3"
+                android:gravity="top|start"
+                android:maxLines="3"
+                android:scrollbars="vertical"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/Comments"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="16dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/yes_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:background="@drawable/button_round_corner_border_theme_pd"
+                android:fontFamily="@font/sansation_bold"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/no_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/button_round_corner"
+                android:fontFamily="@font/sansation_bold"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
